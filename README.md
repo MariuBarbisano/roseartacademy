@@ -339,7 +339,7 @@ npm install
 
 Para consultas sobre el proyecto:
 - Email: info@rosefinearts.com
-- GitHub Issues: [github.com/roseacademy/rosefinearts/issues](https://github.com/roseacademy/rosefinearts/issues)
+- GitHub Issues: [github.com/MariuBarbisano/roseartacademy/issues](https://github.com/MariuBarbisano/roseartacademy/issues)
 
 ## 📝 Licencia
 

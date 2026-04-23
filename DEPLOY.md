@@ -48,7 +48,7 @@ Esto crea la carpeta `dist/` con los archivos optimizados.
 
 2. **En Vercel** (https://vercel.com):
    - Click "Add New Project"
-   - Importá tu repositorio `rosefinearts`
+   - Importá tu repositorio `roseartacademy`
    - **Root Directory**: `Front`
    - **Framework Preset**: Vite
    - **Build Command**: `npm run build`
@@ -86,7 +86,7 @@ vercel --prod
 
 ### Paso 3: Deploy Backend
 1. Click "New" → "GitHub Repo"
-2. Seleccioná `rosefinearts`
+2. Seleccioná `roseartacademy`
 3. **Root Directory**: `Back`
 4. Railway detecta automáticamente Node.js
 

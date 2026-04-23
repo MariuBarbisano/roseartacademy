@@ -10,7 +10,7 @@ git commit -m "Initial production"
 git push origin main
 
 # En Vercel.com:
-# - Importar repo rosefinearts
+# - Importar repo roseartacademy
 # - Root Directory: Front
 # - Framework: Vite
 # - Deploy
@@ -28,7 +28,7 @@ VITE_API_URL=https://tu-backend.railway.app/api
 ```bash
 # En Railway.app:
 # 1. New Project → Add PostgreSQL
-# 2. New → Deploy from GitHub → rosefinearts
+# 2. New → Deploy from GitHub → roseartacademy
 # 3. Root Directory: Back
 ```
 
