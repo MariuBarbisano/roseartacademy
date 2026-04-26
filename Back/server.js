@@ -21,10 +21,17 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Limpiar FRONTEND_URL de comillas y espacios
+const FRONTEND_URL = (process.env.FRONTEND_URL || 'http://localhost:5173')
+  .trim()
+  .replace(/^["']|["']$/g, ''); // Eliminar comillas al inicio y final
+
+console.log('🌐 CORS configurado para:', FRONTEND_URL);
+
 // Middlewares
 app.use(helmet());
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: FRONTEND_URL,
   credentials: true
 }));
 // Logging personalizado simple
