@@ -21,23 +21,24 @@ const HomePage = () => {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background con gradiente */}
-        <div className="absolute inset-0 gradient-dark"></div>
-        
-        {/* Patrón decorativo */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-primary-500 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary-700 rounded-full blur-3xl"></div>
-        </div>
+      {/* Hero Image Section */}
+      <section className="relative h-screen overflow-hidden">
+        <img 
+          src="https://res.cloudinary.com/dlfrdn1c1/image/upload/q_auto/f_auto/v1777221203/WhatsApp_Image_2026-04-22_at_8.39.13_PM_bq3sau.jpg" 
+          alt="Rose Fine Arts Academy" 
+          className="w-full h-full object-cover object-center"
+        />
+      </section>
 
-        {/* Contenido */}
-        <div className="relative z-10 container-custom text-center text-white">
+      {/* Intro Section */}
+      <section className="py-20 gradient-dark">
+        <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="text-center text-white"
           >
             <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 text-balance">
               Descubrí el Artista que Hay en Vos

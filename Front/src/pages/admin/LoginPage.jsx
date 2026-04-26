@@ -34,8 +34,12 @@ const LoginPage = () => {
         <div className="bg-white rounded-2xl shadow-2xl p-8">
           {/* Logo */}
           <div className="text-center mb-8">
-            <div className="w-16 h-16 bg-primary-600 rounded-xl flex items-center justify-center font-bold text-white text-2xl mx-auto mb-4">
-              RF
+            <div className="flex justify-center mb-4">
+              <img 
+                src="/logo.jpeg" 
+                alt="Rose Fine Arts Academy" 
+                className="h-20 w-auto rounded-lg"
+              />
             </div>
             <h1 className="font-display text-3xl font-bold text-gray-900">
               Panel de Administración

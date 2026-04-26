@@ -62,7 +62,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3 text-gray-400">
                 <FiMail className="text-primary-500" />
-                <span className="text-sm">info@rosefinearts.com</span>
+                <span className="text-sm">rose@roseacademy.art</span>
               </li>
             </ul>
           </div>
