@@ -6,21 +6,32 @@ dotenv.config();
 const { Pool } = pg;
 
 // Configuración de la base de datos
-const dbConfig = {
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  database: process.env.DB_NAME,
-};
+// Priorizar DATABASE_URL (Railway/Producción) sobre variables individuales (Local)
+const dbConfig = process.env.DATABASE_URL 
+  ? {
+      connectionString: process.env.DATABASE_URL,
+      ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
+    }
+  : {
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      host: process.env.DB_HOST,
+      port: process.env.DB_PORT,
+      database: process.env.DB_NAME,
+    };
 
-// Debug: Verificar variables de entorno (sin mostrar password)
+// Debug: Verificar configuración
 console.log('🔍 Configuración de Base de Datos:');
-console.log('DB_USER:', process.env.DB_USER || 'UNDEFINED');
-console.log('DB_HOST:', process.env.DB_HOST || 'UNDEFINED');
-console.log('DB_PORT:', process.env.DB_PORT || 'UNDEFINED');
-console.log('DB_NAME:', process.env.DB_NAME || 'UNDEFINED');
-console.log('DB_PASSWORD:', process.env.DB_PASSWORD ? '****** (SET)' : 'UNDEFINED');
+if (process.env.DATABASE_URL) {
+  console.log('✅ Usando DATABASE_URL');
+  console.log('SSL:', dbConfig.ssl ? 'Habilitado' : 'Deshabilitado');
+} else {
+  console.log('📍 Usando variables individuales (local)');
+  console.log('DB_USER:', process.env.DB_USER || 'UNDEFINED');
+  console.log('DB_HOST:', process.env.DB_HOST || 'UNDEFINED');
+  console.log('DB_PORT:', process.env.DB_PORT || 'UNDEFINED');
+  console.log('DB_NAME:', process.env.DB_NAME || 'UNDEFINED');
+}
 
 // Crear pool de conexiones
 const pool = new Pool(dbConfig);
