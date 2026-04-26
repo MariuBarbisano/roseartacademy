@@ -14,6 +14,14 @@ const dbConfig = {
   database: process.env.DB_NAME,
 };
 
+// Debug: Verificar variables de entorno (sin mostrar password)
+console.log('🔍 Configuración de Base de Datos:');
+console.log('DB_USER:', process.env.DB_USER || 'UNDEFINED');
+console.log('DB_HOST:', process.env.DB_HOST || 'UNDEFINED');
+console.log('DB_PORT:', process.env.DB_PORT || 'UNDEFINED');
+console.log('DB_NAME:', process.env.DB_NAME || 'UNDEFINED');
+console.log('DB_PASSWORD:', process.env.DB_PASSWORD ? '****** (SET)' : 'UNDEFINED');
+
 // Crear pool de conexiones
 const pool = new Pool(dbConfig);
 
